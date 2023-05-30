@@ -23,6 +23,8 @@ ChatGPT 中文指南项目旨在帮助中文用户了解和使用ChatGPT。我�
     - [💻 国产 ChatGPT 类似产品](#-国产-chatgpt-类似产品)
   - [如何与 ChatGPT 高效对话？——好的提示语学习](#如何与-chatgpt-高效对话好的提示语学习)
     - [中文 prompts 精选 🔥](#中文-prompts-精选-)
+    - [《面向开发者的 ChatGPT 提示词工程》](#面向开发者的-chatgpt-提示词工程)
+    - [🚀 LangGPT —— 让人人都可快速编写高质量 Prompt!](#-langgpt--让人人都可快速编写高质量-prompt)
     - [ChatGPT Prompt 系统学习](#chatgpt-prompt-系统学习)
     - [Prompt 编写模式：如何将思维框架赋予机器](#prompt-编写模式如何将思维框架赋予机器)
     - [💡 让生产力加倍的 ChatGPT 快捷指令](#-让生产力加倍的-chatgpt-快捷指令)
@@ -31,6 +33,7 @@ ChatGPT 中文指南项目旨在帮助中文用户了解和使用ChatGPT。我�
     - [创建，使用，分享 ChatGPT prompts: OpenPrompt](#创建使用分享-chatgpt-prompts-openprompt)
     - [一个可以帮你自动生成优质Prompt的工具: AIPRM](#一个可以帮你自动生成优质prompt的工具-aiprm)
     - [生成AI绘图灵感](#生成ai绘图灵感)
+    - [微软出品 guidance： 帮助你更好的控制大模型](#微软出品-guidance-帮助你更好的控制大模型)
     - [Prompt 框架](#prompt-框架)
       - [Elavis Saravia 总结的框架：](#elavis-saravia-总结的框架)
       - [Matt Nigh 总结的 CRISPE 框架：](#matt-nigh-总结的-crispe-框架)
@@ -376,6 +379,9 @@ Prompt 编写模式是一份中文教程，介绍了系列 Prompt 编写模式�
 输入简单的词，这个工具会帮你优化成适合生成带有艺术感画面的一连串prompt，可以在大部分绘画工具使用。
 
 ![aigenprompt](imgs/aigenprompt.jpg)
+
+### [微软出品 guidance： 帮助你更好的控制大模型](https://github.com/microsoft/guidance)
+
 
 ### Prompt 框架
 #### Elavis Saravia 总结的框架：

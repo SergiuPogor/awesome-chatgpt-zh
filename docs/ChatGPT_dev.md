@@ -57,6 +57,7 @@
 |[Langflow](https://github.com/langflow-ai/langflow)|![GitHub Repo stars](https://badgen.net/github/stars/langflow-ai/langflow)|A powerful tool for building and deploying AI-powered agents and workflows.|可视化低代码工具，构建与部署 AI 智能体和工作流|
 |[AutoAgent](https://github.com/HKUDS/AutoAgent)|![GitHub Repo stars](https://badgen.net/github/stars/HKUDS/AutoAgent)|Fully-Automated and Zero-Code LLM Agent Framework.|港大数据智能实验室出品，全自动、零代码的 LLM 智能体框架，用自然语言即可创建并运行智能体|
 |[Mem0](https://github.com/mem0ai/mem0)|![GitHub Repo stars](https://badgen.net/github/stars/mem0ai/mem0)|Universal memory layer for AI Agents.|为 AI 智能体提供通用记忆层，让其跨会话记住用户偏好与历史，实现个性化交互|
+|[AI Agents for Beginners](https://github.com/microsoft/ai-agents-for-beginners)|![GitHub Repo stars](https://badgen.net/github/stars/microsoft/ai-agents-for-beginners)|11 Lessons to Get Started Building AI Agents.|微软官方出品的 AI 智能体入门课程，含 11 节课与可运行代码示例，系统讲解 Agent 设计模式、工具使用、多智能体等核心概念|
 
 ### LangChain 开发资源
 

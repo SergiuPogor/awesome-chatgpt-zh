@@ -51,6 +51,7 @@
 | Open LLM Leaderboard | [HuggingFace](https://huggingface.co/open-llm-leaderboard) | 基于标准化基准的开源模型自动评测榜单，适合硬指标对比。 |
 | SuperCLUE | [superclueai.com](https://www.superclueai.com/) | 中文通用大模型综合性测评基准，中文场景的主流权威榜单。 |
 | Artificial Analysis | [artificialanalysis.ai](https://artificialanalysis.ai/) | 第三方独立评测，汇总智能指数、速度、价格等维度，便于按性价比选型。 |
+| 中文大模型能力评测榜单 | [chinese-llm-benchmark](https://github.com/jeinlee1991/chinese-llm-benchmark) | 持续更新的中文大模型能力评测，覆盖国内外主流闭源与开源模型，含客观题与主观题多维度打分，适合中文场景选型参考。 |
 | Models.dev | [models.dev](https://models.dev/) / [GitHub](https://github.com/sst/models.dev) | SST 团队开源的 AI 模型数据库，收录各家模型的上下文窗口、输出上限、价格、能力（推理/工具调用/结构化输出）与开闭源信息；提供免费 JSON API（`models.dev/api.json`），是 opencode 等开源项目的模型数据源，数据以 TOML 文件社区共建。 |
 
 ### 早期经典开源 LLM（历史存档）
@@ -137,13 +138,13 @@
 |[MLC LLM](https://github.com/mlc-ai/mlc-llm)|![GitHub Repo stars](https://badgen.net/github/stars/mlc-ai/mlc-llm)|Enable everyone to develop, optimize and deploy AI models natively on everyone's devices.|陈天奇大佬力作——MLC LLM，在各类硬件上原生部署任意大型语言模型。可将大模型应用于移动端（例如 iPhone）、消费级电脑端（例如 Mac）和 Web 浏览器。|
 |[languagemodels](https://github.com/jncraton/languagemodels)|![GitHub Repo stars](https://badgen.net/github/stars/mlc-ai/mlc-llm)|Explore large language models on any computer with 512MB of RAM.|在512MB RAM的计算机上探索大型语言模型使用|
 |[ChatGLM-Efficient-Tuning](https://github.com/hiyouga/ChatGLM-Efficient-Tuning) | ![GitHub Repo stars](https://badgen.net/github/stars/hiyouga/ChatGLM-Efficient-Tuning) | Fine-tuning ChatGLM-6B with PEFT | 基于 PEFT 的高效 ChatGLM 微调|
-|[LLaMA-Efficient-Tuning](https://github.com/hiyouga/LLaMA-Efficient-Tuning) | ![GitHub Repo stars](https://badgen.net/github/stars/hiyouga/LLaMA-Efficient-Tuning) | Fine-tuning LLaMA with PEFT (PT+SFT+RLHF with QLoRA) |支持多种模型 LLaMA (7B/13B/33B/65B) ，BLOOM & BLOOMZ (560M/1.1B/1.7B/3B/7.1B/176B)，baichuan (7B)，支持多种微调方式LoRA，QLoRA|
 |[微调中文数据集 COIG](https://github.com/BAAI-Zlab/COIG) | ![GitHub Repo stars](https://badgen.net/github/stars/BAAI-Zlab/COIG) | Chinese Open Instruction Generalist (COIG) project aims to maintain a harmless, helpful, and diverse set of Chinese instruction corpora. |中文开放教学通才(COIG)项目旨在维护一套无害、有用和多样化的中文教学语料库。|
 |[LLaMA-Adapter🚀](https://github.com/ZrrSkywalker/LLaMA-Adapter) | ![GitHub Repo stars](https://badgen.net/github/stars/ZrrSkywalker/LLaMA-Adapter) | - |高效微调一个聊天机器人|
 | [⚡ Lit-LLaMA](https://github.com/Lightning-AI/lit-llama) | ![GitHub Repo stars](https://badgen.net/github/stars/Lightning-AI/lit-llama) | - |Lightning-AI 基于nanoGPT的LLaMA语言模型的实现。支持量化，LoRA微调，预训练。|
 | [Intel® Extension for Transformers](https://github.com/intel/intel-extension-for-transformers) | ![GitHub Repo stars](https://badgen.net/github/stars/intel/intel-extension-for-transformers) |⚡ Build your chatbot within minutes on your favorite device; offer SOTA compression techniques for LLMs; run LLMs efficiently on Intel Platforms⚡ |在Intel平台上高效运行llm。|
 | [unsloth](https://github.com/unslothai/unsloth) | ![GitHub Repo stars](https://badgen.net/github/stars/unslothai/unsloth) | Finetune and run open models like Gemma, Qwen, DeepSeek, gpt-oss locally, 2x faster with 70% less memory. | 高效训练、微调与本地运行开源模型（Gemma/Qwen/DeepSeek/gpt-oss 等），速度提升约 2 倍、显存占用降低约 70%。|
 | [DeepSpec](https://github.com/deepseek-ai/DeepSpec) | ![GitHub Repo stars](https://badgen.net/github/stars/deepseek-ai/DeepSpec) | A full-stack codebase for training and evaluating speculative decoding algorithms. | DeepSeek 官方推出的投机解码（speculative decoding）推理加速全栈代码库，涵盖数据准备、草稿模型训练与评测，用于提升大模型推理速度。|
+| [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) | ![GitHub Repo stars](https://badgen.net/github/stars/hiyouga/LLaMA-Factory) | Unified efficient fine-tuning of 100+ LLMs & VLMs. | 统一高效的大模型微调框架，零代码命令行/WebUI 即可对 100+ 主流 LLM 与多模态模型进行 LoRA/QLoRA、SFT、RLHF、DPO 等训练。|
 
 
 

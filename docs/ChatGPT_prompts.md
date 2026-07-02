@@ -201,6 +201,7 @@ https://github.com/mattnigh/ChatGPT3-Free-Prompt-List
 |[amazing-bard-prompts](https://github.com/dsdanielpark/amazing-bard-prompts) | ![GitHub Repo stars](https://badgen.net/github/stars/dsdanielpark/amazing-bard-prompts) | This repo includes Claude prompt curation to use Bard better. |谷歌 bard 模型 prompt|
 |[understand-prompt](https://github.com/prompt-engineering/understand-prompt) | ![GitHub Repo stars](https://badgen.net/github/stars/prompt-engineering/understand-prompt) | - |理解 Prompt：基于编程、绘画、写作的 AI 探索与总结|
 |[🌟 ChatGPT-Awesomes-Collection 🌟](https://github.com/yzfly/my-awesomes-collection/blob/main/docs/chatgpt.md) | ![GitHub Repo stars](https://badgen.net/github/stars/yzfly/my-awesomes-collection) | - |ChatGPT prompt 合集的精选合集|
+| [system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) | ![GitHub Repo stars](https://badgen.net/github/stars/x1xhlol/system-prompts-and-models-of-ai-tools) | System prompts, tools and internal configurations of popular AI tools. | 汇总 Cursor、v0、Devin、Windsurf、Manus 等主流 AI 编程/Agent 工具的系统提示词、工具定义与内部配置，研究提示词工程与 Agent 设计的一手资料。|
 
 ### ChatGPT 越狱
 

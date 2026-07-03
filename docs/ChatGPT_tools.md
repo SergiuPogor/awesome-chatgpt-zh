@@ -297,6 +297,7 @@ https://github.com/whoiskatrin/chart-gpt
 | [kilocode](https://github.com/Kilo-Org/kilocode) | ![GitHub Repo stars](https://badgen.net/github/stars/Kilo-Org/kilocode) | All-in-one AI coding agent. | 融合 Cline 与 Roo Code 能力的一体化 Agent 编程平台 |
 | [chatgpt-on-wechat](https://github.com/zhayujie/chatgpt-on-wechat) | ![GitHub Repo stars](https://badgen.net/github/stars/zhayujie/chatgpt-on-wechat) | LLM chatbot framework. | 经典微信/公众号 AI 机器人，现升级为支持任务规划、工具调用与记忆的 Agent 框架 |
 | [PentestGPT](https://github.com/GreyDGL/PentestGPT) | ![GitHub Repo stars](https://badgen.net/github/stars/GreyDGL/PentestGPT) | A GPT-empowered penetration testing tool. | LLM 驱动的自动化渗透测试 Agent，辅助安全研究 |
+| [strix](https://github.com/usestrix/strix) | ![GitHub Repo stars](https://badgen.net/github/stars/usestrix/strix) | Open-source AI penetration testing tool to find and fix your app's vulnerabilities. | 开源 AI 渗透测试工具，自主发现并帮助修复应用漏洞 |
 | [gpt-researcher](https://github.com/assafelovic/gpt-researcher) | ![GitHub Repo stars](https://badgen.net/github/stars/assafelovic/gpt-researcher) | Autonomous agent for online research. | 联网检索并产出带引用的研究报告，可对接多种 LLM |
 | [shell_gpt](https://github.com/TheR1D/shell_gpt) | ![GitHub Repo stars](https://badgen.net/github/stars/TheR1D/shell_gpt) | Command-line productivity tool powered by LLMs. | 用自然语言生成 Shell 命令、代码片段，加速终端操作 |
 | [CopilotForXcode](https://github.com/intitni/CopilotForXcode) | ![GitHub Repo stars](https://badgen.net/github/stars/intitni/CopilotForXcode) | The first Copilot extension for Xcode. | 面向 Xcode 的 Copilot/ChatGPT 源码编辑器扩展 |

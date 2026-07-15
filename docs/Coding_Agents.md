@@ -29,6 +29,7 @@
 | Omnigent | [GitHub](https://github.com/omnigent-ai/omnigent) | 开源 AI Agent 框架与"元 harness"（Python，Apache-2.0），可统一编排 Claude Code、Codex、Cursor、pi 及自定义 Agent，无需改写即可热插拔 harness，并提供策略管控、沙箱与跨设备实时协作 |
 | ruflo | [GitHub](https://github.com/ruvnet/ruflo) | 面向 Claude 的开源 Agent"元 harness"（TypeScript，MIT），可部署多智能体群（swarm）、编排自主工作流，内置自适应记忆、自学习群体智能与 RAG 集成，原生对接 Claude Code / Codex |
 | DeepSeek-Reasonix | [GitHub](https://github.com/esengine/DeepSeek-Reasonix) | DeepSeek 原生的终端 AI 编码 Agent（Go，MIT），围绕前缀缓存（prefix-cache）稳定性设计，适合长时间常驻运行 |
+| Tura | [GitHub](https://github.com/Tura-AI/tura) ・[官网](https://turaai.net/) ・[基准](https://turaai.net/benchmark) | 本地开源编码 Agent（AGPL-3.0），提供 CLI、TUI、GUI，支持仓库编辑、命令执行、验证与任务级上下文管理，并公开长周期任务的可复现基准产物 |
 
 ## IDE / 编辑器编码 Agent
 

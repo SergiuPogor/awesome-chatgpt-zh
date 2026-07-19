@@ -146,6 +146,7 @@
 |[Flowise](https://github.com/FlowiseAI/Flowise)|![GitHub Repo stars](https://badgen.net/github/stars/FlowiseAI/Flowise)|开源可视化/低代码平台，拖拽式构建 AI 智能体与工作流|
 |[Activepieces](https://github.com/activepieces/activepieces)|![GitHub Repo stars](https://badgen.net/github/stars/activepieces/activepieces)|开源的 AI 自动化平台（Zapier 替代品），可视化编排 AI 智能体与 MCP 工作流，所有 pieces 均自动暴露为 MCP server 供 LLM 调用|
 |[Vercel AI SDK](https://github.com/vercel/ai)|![GitHub Repo stars](https://badgen.net/github/stars/vercel/ai)|Next.js 团队出品的 TypeScript 工具包，用于在 React/Vue/Svelte 等框架中构建 AI 应用|
+|[Markstream](https://github.com/Simon-He95/markstream-vue)|![GitHub Repo stars](https://badgen.net/github/stars/Simon-He95/markstream-vue)|面向 AI 对话界面的开源流式 Markdown 渲染组件，支持 Vue、React、Svelte、Angular，以及 Mermaid、KaTeX、代码高亮和 SSR|
 |[Haystack](https://github.com/deepset-ai/haystack)|![GitHub Repo stars](https://badgen.net/github/stars/deepset-ai/haystack)|deepset 出品的开源 Python 框架，通过模块化管线构建生产级 LLM 应用、RAG 与智能体|
 |[Semantic Kernel](https://github.com/microsoft/semantic-kernel)|![GitHub Repo stars](https://badgen.net/github/stars/microsoft/semantic-kernel)|微软开源 SDK，在 Python/.NET/Java 中快速集成 LLM 能力，构建智能体系统|
 |[OpenFugu](https://github.com/trotsky1997/OpenFugu)|![GitHub Repo stars](https://badgen.net/github/stars/trotsky1997/OpenFugu)|Sakana Fugu「一个模型统御全部」LLM 编排器的开源复现，覆盖读取→运行→训练→服务全链路（Apache-2.0）|

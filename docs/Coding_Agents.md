@@ -32,7 +32,7 @@
 | **deepseek-harness (dsh)** | [GitHub](https://github.com/deepseek-ai/deepseek-harness) | DeepSeek 官方开源 Agent 框架（2026-08-13 发布，MIT，两周破 19 万 star），"Everything is a Plugin"、Cordis 驱动：模型、工具、会话、沙箱、循环、UI 全部可替换；内置 MCP 客户端、兼容 Claude Code / Codex 的 Hook 协议与 Agent Skills；`npx @deepseek-ai/dsh web` 启动本地 Web UI，亦有 headless 与 Python SDK。详见 [DeepSeek 生态指南](DeepSeek.md#deepseek-harness官方-agent-框架)，技能 / 插件精选见 [awesome-dsh-skills](https://github.com/yzfly/awesome-dsh-skills) |
 | Deep Code | [GitHub](https://github.com/lessweb/deepcode-cli) ・[官网](https://deepcode.vegamo.cn/) | 专为 DeepSeek-V4 优化的开源终端编码助手，支持深度思考、推理强度控制、Agent Skills 与 MCP，已列入 agentskills.io 采纳名单 |
 | DeepSeek-TUI | [awesome-deepseek-agent](https://github.com/deepseek-ai/awesome-deepseek-agent) | Rust 实现的 DeepSeek 终端编码工具，带沙箱工具与 MCP 支持 |
-| Tura | [GitHub](https://github.com/Tura-AI/tura) ・[官网](https://turaai.net/) ・[基准](https://turaai.net/benchmark) | Tura 是一个本地开源编码 Agent，面向厌倦了含糊技能宣传、缺乏证据的 token-saving 扩展，以及尚未理解仓库便开始修改的 Agent 的开发者。 |
+| Tura | [GitHub](https://github.com/Tura-AI/tura) ・[官网](https://turaai.net/) ・[基准](https://turaai.net/benchmark) | 本地开源编码 Agent（AGPL-3.0），主打"先理解仓库再动手"与可核验的 token 节省，官方基准称比基线少 77.5% 交互轮次、效果提升 16.7%（数据来自项目自测） |
 
 ## IDE / 编辑器编码 Agent
 

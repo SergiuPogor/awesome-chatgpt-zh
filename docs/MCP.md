@@ -1,8 +1,22 @@
 ## MCP（模型上下文协议）指南
 
-MCP（Model Context Protocol，模型上下文协议）是 Anthropic 于 2024 年 11 月推出的开放协议，被称为 AI 应用的"USB-C 接口"——让大模型以统一方式无缝连接外部工具、数据与系统。它已成为 AI 智能体生态的事实标准之一。
+MCP（Model Context Protocol，模型上下文协议）是 Anthropic 于 2024 年 11 月推出的开放协议，被称为 AI 应用的"USB-C 接口"——让大模型以统一方式无缝连接外部工具、数据与系统。2025 年底 Anthropic 将 MCP 捐赠给 Linux 基金会旗下的 **Agentic AI Foundation（AAIF，由 Anthropic、OpenAI、Block 共同发起）** 中立治理；2026 年 7 月 28 日发布的新版规范把协议核心改为**无状态**请求 / 响应模型，并引入扩展框架、MCP Apps 与授权加固。MCP 已是 AI 智能体生态的事实标准：Claude、ChatGPT / Codex、Gemini CLI、Cursor、DeepSeek Harness（dsh）等全部原生支持。
+
+> 🤝 与 Skills 的关系：MCP 负责"连接工具与数据"，Agent Skills 负责"教会 Agent 怎么做"，两者互补，见 [Claude Skills 指南](Claude_Skills.md)。
 
 > 📌 本节为精选索引，完整中文资源大全（400+ MCP Servers）见作者维护的 👉 [**Awesome-MCP-ZH**](https://github.com/yzfly/Awesome-MCP-ZH)（持续更新，欢迎 star）
+
+### 协议进展（2025–2026）
+
+|事件|链接|中文简介|
+|---|---|---|
+|2026-07-28 规范发布|[链接](https://blog.modelcontextprotocol.io/posts/2026-07-28/)|最重要的一次升级：**无状态协议核心**（去掉 initialize 握手与 Mcp-Session-Id，请求可落在任意实例）、多轮往返请求（MRTR，工具中途向用户要输入）、`Mcp-Method` / `Mcp-Name` 头部路由、可缓存的 list 结果、授权加固（RFC 9207、CIMD）、正式的扩展框架与弃用政策（Roots / Sampling / Logging 进入 12 个月弃用期，旧版 HTTP+SSE 传输弃用）。|
+|规范全文 2026-07-28|[链接](https://modelcontextprotocol.io/specification/2026-07-28)|当前生效的协议规范。TypeScript / Python / Go / C# 一级 SDK 与 Rust SDK（beta）同步支持。|
+|Tasks 扩展|[链接](https://modelcontextprotocol.io/specification/2026-07-28)|长时任务从实验特性升级为官方扩展 `io.modelcontextprotocol/tasks`，轮询式操作 + 统一的 `subscriptions/listen` 流。|
+|MCP Apps|[链接](https://modelcontextprotocol.io/)|让 MCP 服务器向宿主返回可交互 UI（表单、可视化）而非纯文本，Claude、ChatGPT 等宿主已支持。|
+|2025-11-25 规范|[链接](https://modelcontextprotocol.io/specification/2025-11-25)|上一版主要规范，引入异步任务、增强的授权与 Elicitation（向用户征询输入）。|
+|MCP 捐赠 Linux 基金会 / AAIF|[链接](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation)|2025-12，Anthropic 将 MCP 捐给新成立的 Agentic AI Foundation，OpenAI 同时捐出 AGENTS.md，Block 捐出 goose，实现中立治理。|
+|Registry 生态|[链接](https://registry.modelcontextprotocol.io)|官方注册中心 + Glama（19,000+ 服务器）、mcp.so（16,000+）等目录，MCP 服务器数量已达数万量级。|
 
 ### 官方资源
 
@@ -25,6 +39,12 @@ MCP（Model Context Protocol，模型上下文协议）是 Anthropic 于 2024 �
 |Cherry Studio|[GitHub](https://github.com/CherryHQ/cherry-studio)|国产开源多模型桌面客户端，支持 MCP，中文用户友好。|
 |5ire|[GitHub](https://github.com/nanbingxyz/5ire)|跨平台开源桌面 AI 助手，内置 MCP 工具支持。|
 |Windsurf|[链接](https://windsurf.com)|AI IDE，支持 MCP，主打多 Agent 并行工作流。|
+|Claude Code|[链接](https://code.claude.com/docs/en/mcp)|Anthropic 终端编码 Agent，`claude mcp add` 一行接入本地 / 远程 MCP 服务器，支持 OAuth 与项目级 `.mcp.json` 共享。|
+|OpenAI Codex / ChatGPT|[GitHub](https://github.com/openai/codex)|Codex CLI 通过 `config.toml` 接入 MCP 服务器；ChatGPT 开发者模式与 Apps SDK 亦基于 MCP。|
+|Gemini CLI|[GitHub](https://github.com/google-gemini/gemini-cli)|Google 开源终端 Agent，`settings.json` 配置 MCP 服务器。|
+|DeepSeek Harness（dsh）|[GitHub](https://github.com/deepseek-ai/deepseek-harness)|DeepSeek 官方 Agent 框架，内置 MCP 客户端桥接第三方工具服务器，并兼容 Claude Code / Codex 的 Hook 协议与 Skills；生态见 [DeepSeek 生态指南](DeepSeek.md#deepseek-harness官方-agent-框架)。|
+|OpenClaw（"龙虾"）|[GitHub](https://github.com/openclaw/openclaw)|开源个人 AI 助理，接入飞书 / 微信等 IM，支持 MCP 与 Skills，可直接选 DeepSeek 作为模型。|
+|OpenCode / Crush / Goose|[OpenCode](https://github.com/sst/opencode)|主流开源终端编码 Agent 均原生支持 MCP。|
 
 ### MCP Servers — 浏览器自动化
 
@@ -78,6 +98,14 @@ MCP（Model Context Protocol，模型上下文协议）是 Anthropic 于 2024 �
 |Sequential Thinking MCP（官方）|[GitHub](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking)|官方顺序思考服务器，引导模型进行分步结构化推理。|
 |MemPalace|[GitHub](https://github.com/MemPalace/mempalace)|开源、免费的 AI 记忆系统（Python，MIT），自称在公开基准上表现领先，基于 ChromaDB 提供向量化长期记忆，并通过 MCP 接入 Claude、Codex 等 Agent 客户端。社区开发活跃，已合并上千 PR。|
 
+### MCP × DeepSeek
+
+|名称|链接|中文简介|
+|---|---|---|
+|用 DeepSeek-V4 驱动任意 MCP 客户端|[链接](DeepSeek.md#在编程智能体中使用-deepseek)|V4 同时兼容 OpenAI 与 Anthropic 协议，把 Claude Code / Cursor / Cline 等 MCP 客户端的模型换成 `deepseek-v4-pro` 即可，工具调用开箱即用，单次最多 128 个函数并行。|
+|deepseek-harness-plugin-mcp|[GitHub](https://github.com/bobleer/deepseek-harness-plugin-mcp)|把 dsh 插件目录（GitHub `dsh-plugin` topic）暴露为 MCP 服务器，让任意 Agent 发现、安装、运行 DeepSeek Harness 插件。|
+|deepseek-mcp-server|[GitHub](https://github.com/DMontgomery40/deepseek-mcp-server)|将 DeepSeek 模型封装为 MCP 服务器，供 Claude Desktop 等宿主把复杂推理任务委托给 DeepSeek。|
+
 ### 聚合列表与 MCP 市场/目录
 
 |名称|链接|中文简介|
@@ -96,3 +124,5 @@ MCP（Model Context Protocol，模型上下文协议）是 Anthropic 于 2024 �
 |---|---|---|
 |Introducing the Model Context Protocol|[链接](https://www.anthropic.com/news/model-context-protocol)|Anthropic 官方 MCP 发布文章，理解协议设计理念的必读起点。|
 |Code execution with MCP|[链接](https://www.anthropic.com/engineering/code-execution-with-mcp)|Anthropic 工程博客，讲解用代码执行方式构建更高效的 MCP Agent。|
+|The 2026-07-28 Specification|[链接](https://blog.modelcontextprotocol.io/posts/2026-07-28/)|MCP 官方博客对无状态核心、MRTR、扩展框架等变更的完整说明，升级服务器前必读。|
+|Skills explained（Skills vs MCP）|[链接](https://claude.com/blog/skills-explained)|官方对比 Skills、MCP、Subagents 的分工与适用场景。|

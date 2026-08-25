@@ -137,6 +137,76 @@ https://github.com/mattnigh/ChatGPT3-Free-Prompt-List
 | Google Gemini Prompt design strategies | [链接](https://ai.google.dev/gemini-api/docs/prompting-strategies) | Gemini API 官方提示设计策略：少样本、系统指令、CoT、输出格式控制等 |
 | 微软 Azure OpenAI 提示工程技术 | [链接](https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/prompt-engineering) | 微软官方提示工程技术文档，含 grounding、参数调节与提高准确性的策略 |
 | DeepSeek-R1 官方提示建议 | [链接](https://github.com/deepseek-ai/DeepSeek-R1) | R1 推荐：避免 system prompt 与少样本、不必显式要求"逐步推理"、temperature 0.5–0.7 |
+| DeepSeek V4 思考模式指南 | [链接](https://api-docs.deepseek.com/guides/thinking_mode/) | V4 官方：`reasoning_effort` low/high/max、`reasoning_content` 回传规则、思考模式下不支持温度等参数；本页下方有专门的[提示技巧](#deepseek-v4-思考模式提示技巧) |
+
+## DeepSeek V4 思考模式提示技巧
+
+DeepSeek-V4（Pro / Flash）默认开启**思考模式**（Thinking Mode），并支持 `low / high / max` 三档推理强度。思考模型的提示写法与传统对话模型有明显差异——它不需要你教它"怎么想"，而需要你说清楚"要什么"。以下技巧综合官方文档与实践经验整理，完整生态见 [DeepSeek 生态指南](DeepSeek.md)。
+
+### 先选对模式与强度
+
+| 场景 | 推荐 | 说明 |
+|------|------|------|
+| 闲聊、改写、翻译、简单问答、批量分类 | 非思考模式 / `low` | 速度快、成本低（可省 60–80% token），质量与思考模式相当 |
+| 日常编程、Agent 工作流、分析总结 | `high`（默认） | 官方推荐的"日常 Agent 工作流"档位 |
+| 竞赛数学、复杂规划、多步推理、疑难 bug | `max` | 思维链可能非常长，官方要求上下文至少 384K，`max_tokens` 要给足 |
+| 要求响应快、成本敏感 | V4-Flash | 推理能力逼近 V4-Pro，价格约为 1/3 |
+
+网页版 / App 通过"深度思考"按钮切换；API 通过 `thinking: {"type": "enabled"}` + `reasoning_effort` 控制；Anthropic 兼容接口用 `output_config.effort`（`none` 关闭思考）。
+
+### API 层面的硬规则
+
+- 思考模式**不支持** `temperature`、`top_p`、`presence_penalty`、`frequency_penalty`，传了也被忽略——用 `max_tokens` 控长度，别指望调温度。本地部署官方建议 `temperature=1.0, top_p=1.0`。
+- 模型的思维链通过 `reasoning_content` 字段返回。多轮对话若**带 `tools` 参数**，后续每一轮都必须把 `reasoning_content` 原样回传（即使没发生工具调用），否则 API 返回 400；不带 tools 时可省略。
+- 思考模式支持"推理 → 调工具 → 再推理 → 再调工具"多轮循环，工具描述写得越清楚，模型越少走弯路。
+- 非思考模式的温度参考值（官方建议）：代码 / 数学 0.0，数据分析 1.0，通用对话与翻译 1.3，创意写作 1.5。
+
+### 提示写法：说目标，不教步骤
+
+1. **直接描述任务与验收标准**，不要写"请一步一步思考"——思考模式已内置推理，重复要求只会让思维链更长更贵。把精力放在"输出必须满足什么"上。
+2. **少用 few-shot**。R1 起官方就建议零样本提示：示例会锚定模型思路，反而拉低推理模型的表现；确需示例时给 1 个即可，并说明"这只是格式示例"。
+3. **System prompt 保持简短**，把关键约束写进用户消息。R1 时代官方建议不用 system prompt，V4 已支持但仍以"用户消息说清楚"为主。
+4. **数学题**加一句"请逐步推理，并把最终答案放在 `\boxed{}` 内"（官方建议格式），便于程序解析。
+5. **指定语言**："全程使用中文回答，代码注释也用中文"——避免思维链与答案中英混杂。
+6. **长上下文（最高 1M）**：材料放前、指令放后，并在结尾重述一遍关键问题；超长文档用清晰的分节标题切块，效果好于一整段塞入。
+7. **结构化输出**：明确 JSON schema 或表格列名，必要时开启 JSON Mode；思考模式下模型会先想清楚再输出，格式稳定性很高。
+8. **Agent 任务**：给出"完成的定义"（Definition of Done）、允许使用的工具、失败时的处理策略；V4 对工具调用做过重点优化，规则写清楚它会自己规划。
+9. **代码任务**：提供报错原文、相关文件、期望行为三要素，明确"只改动必要文件、给出 diff"，比"帮我修一下"高效得多。
+10. **利用硬盘缓存**：把不变的长材料 / 系统指令放在提示开头、变化的问题放在末尾，多轮调用可命中前缀缓存，输入成本降到约 1/30。
+
+### 三个即用模板
+
+**复杂分析**
+```
+背景：<一句话>
+材料：<粘贴或引用>
+任务：<要回答的核心问题>
+要求：结论先行；列出关键依据与不确定性；如需假设请明确写出；用中文，控制在 500 字内。
+```
+
+**竞赛 / 数学（配 `reasoning_effort: max`）**
+```
+请逐步推理并求解下面的问题，最终答案放在 \boxed{} 内。
+问题：<题目>
+```
+
+**编码 Agent（Claude Code / Codex 等接入 V4 时）**
+```
+目标：<要实现的功能或要修的 bug>
+上下文：<相关文件路径、报错原文、复现步骤>
+约束：只修改必要文件；保持现有代码风格；改完运行 <测试命令> 并确认通过。
+完成标准：<可验证的验收条件>
+```
+
+### 相关资源
+
+| 名称 | 链接 | 简介 |
+|------|------|------|
+| DeepSeek 官方 Thinking Mode 指南 | [链接](https://api-docs.deepseek.com/guides/thinking_mode/) | 开启思考、`reasoning_effort`、`reasoning_content` 回传规则与不支持参数的权威说明 |
+| DeepSeek 官方 Function Calling 指南 | [链接](https://api-docs.deepseek.com/guides/function_calling) | 思考模式下的工具调用规范 |
+| DeepSeek-V4-Pro 模型卡 | [链接](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro) | 官方推荐采样参数、Non-Think / Think High / Think Max 三档说明 |
+| DeepSeek-R1 官方提示建议 | [链接](https://github.com/deepseek-ai/DeepSeek-R1#usage-recommendations) | 推理模型提示的经典四条：零样本、免 system prompt、数学用 `\boxed{}`、指定语言 |
+| DeepSeek 生态指南 | [链接](DeepSeek.md) | 模型谱系、API 价格、编程智能体接入、dsh 与本地部署 |
 
 ## 现代提示技术与经典论文
 

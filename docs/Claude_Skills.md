@@ -1,6 +1,8 @@
 ## Claude Skills（Agent Skills）指南
 
-Claude Skills（Agent Skills）是 Anthropic 推出的让 AI 智能体按需加载专业能力的机制：通过 `SKILL.md` 加资源文件，把领域知识、脚本与最佳实践打包成可复用、可组合的"技能"，并采用渐进式披露（progressive disclosure）按需注入上下文，是构建实用智能体的新范式。
+Claude Skills（Agent Skills）是 Anthropic 推出的让 AI 智能体按需加载专业能力的机制：通过 `SKILL.md` 加资源文件，把领域知识、脚本与最佳实践打包成可复用、可组合的"技能"，并采用渐进式披露（progressive disclosure）按需注入上下文，是构建实用智能体的新范式。2025 年底 Anthropic 将其发布为**开放标准（agentskills.io）**，到 2026 年中已有 40+ 产品采纳——Claude / Claude Code、ChatGPT & Codex、GitHub Copilot、VS Code、Cursor、Gemini CLI、OpenCode、Goose、Trae、OpenClaw、Hermes、DeepSeek Harness 与 Deep Code 等——**一次编写、到处可用**。
+
+> 🤝 与 MCP 的关系：MCP 负责"连接工具与数据"，Skills 负责"教会 Agent 怎么做"，两者互补，见 [MCP 指南](MCP.md)。DeepSeek 侧的技能生态见下方 [DeepSeek Harness 技能生态](#deepseek-harness-技能生态)。
 
 > 📌 本节为精选索引，完整中文资源大全见作者维护的 👉 [**awesome-claude-skills-zh**](https://github.com/yzfly/awesome-claude-skills-zh)（持续更新，欢迎 star）
 
@@ -15,6 +17,22 @@ Claude Skills（Agent Skills）是 Anthropic 推出的让 AI 智能体按需加�
 |Agent Skills 官方文档（API）|[链接](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)|官方 API 文档，介绍如何通过 API 使用与管理 Agent Skills。|
 |Extend Claude with skills（Claude Code 文档）|[链接](https://code.claude.com/docs/en/skills)|Claude Code 官方文档，讲解如何在 Claude Code 中编写、安装与使用技能。|
 |claude-plugins-official|[GitHub](https://github.com/anthropics/claude-plugins-official)|官方 Claude Code 插件市场仓库，可一键安装官方维护的技能与插件。|
+
+### 开放标准与跨平台采纳
+
+|名称|链接|中文简介|
+|---|---|---|
+|agentskills.io（官网）|[链接](https://agentskills.io/)|Agent Skills 开放标准官网：规范、快速上手、客户端展示（Client Showcase）列出全部采纳产品及各家的接入文档。|
+|agentskills/agentskills（规范仓库）|[GitHub](https://github.com/agentskills/agentskills)|规范与文档源码，社区通过 GitHub / Discord 共同演进标准。|
+|规范全文|[链接](https://agentskills.io/specification)|`SKILL.md` 的 frontmatter 字段、目录结构（scripts / references / assets）、渐进式披露三阶段（发现 → 激活 → 执行）。|
+|skills.sh|[链接](https://skills.sh)|最主要的技能分发中心与排行榜，`npx skills add <owner/repo>` 一键安装到各主流 Agent。|
+|OpenAI Codex Skills 文档|[链接](https://developers.openai.com/codex/skills/)|Codex / ChatGPT 对 Agent Skills 标准的官方支持说明。|
+|Gemini CLI Skills 文档|[链接](https://geminicli.com/docs/cli/skills/)|Google Gemini CLI 的技能加载与管理。|
+|Cursor Skills 文档|[链接](https://cursor.com/docs/context/skills)|Cursor 2.4+ 原生支持 `SKILL.md`。|
+|GitHub Copilot Agent Skills|[链接](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills)|Copilot / VS Code 的技能支持。|
+|OpenClaw Skills 文档|[链接](https://docs.openclaw.ai/tools/skills)|"龙虾" OpenClaw 的技能体系，配套 ClawHub 技能市场。|
+
+> ⚠️ **安全提醒**：技能本质是注入上下文的指令 + 可执行脚本。2026 年初 Snyk 的 ToxicSkills 研究在 ClawHub / skills.sh 抽样中发现约 36% 的技能存在提示注入，另有大规模审计在 2 万余个技能中发现十余万问题。安装第三方技能前请阅读 `SKILL.md` 与脚本，优先选择官方或经审计的市场。
 
 ### 聚合列表
 
@@ -37,6 +55,20 @@ Claude Skills（Agent Skills）是 Anthropic 推出的让 AI 智能体按需加�
 |wanshuiyin/Auto-claude-code-research-in-sleep|[GitHub](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep)|ARIS（Auto-Research-In-Sleep）：用于自主 ML 研究的纯 Markdown 轻量技能，无框架、无锁定，内置 13 个研究工作流与持久化 Research Wiki，可跨 Claude Code、Codex、Cursor、Kimi、DeepSeek、GLM 等多种模型使用。|
 |Hacker0x01/claude-power-user|[GitHub](https://github.com/Hacker0x01/claude-power-user)|HackerOne 开源的 Claude Code 核心技能库。|
 |JuliusBrussee/caveman|[GitHub](https://github.com/JuliusBrussee/caveman)|"原始人语气"省 token 的 Claude Code 技能（MIT）：让模型用极简的"原始人"句式表达（why use many token when few token do trick），自称可削减约 65% 输出 token，趣味十足又能省钱。|
+
+### DeepSeek Harness 技能生态
+
+DeepSeek 官方 Agent 框架 [deepseek-harness（dsh）](DeepSeek.md#deepseek-harness官方-agent-框架) 内置 Skill 系统（Markdown 指令集，由 SkillRegistry 管理，支持全局 / Agent 级作用域），并兼容 Agent Skills 开放标准与 Claude Code / Codex 的 Hook 协议；社区以 GitHub `dsh-plugin` topic 为索引，两周内已涌现数百个技能与插件仓库。
+
+|名称|链接|中文简介|
+|---|---|---|
+|awesome-dsh-skills|[GitHub](https://github.com/yzfly/awesome-dsh-skills)|本项目作者维护的 dsh 技能 / 插件中文精选：700+ 仓库自动收录并每日校验、11 大分类、**DSH Skill Spec 0.1** 规范、`dsh-skill-lint` 零依赖校验器（缺失触发词 / 失效引用 / 泄露密钥）与 2026 Q3 精选版；可搜索站点 [code.jiangshu.ai/awesome-dsh-skills](https://code.jiangshu.ai/awesome-dsh-skills)。|
+|0xsline/awesome-deepseek-harness|[GitHub](https://github.com/0xsline/awesome-deepseek-harness)|从 dsh-external/hub 与 `dsh-plugin` topic 整理的 DSH 插件、工具与基础设施列表。|
+|Dominic789654/awesome-deepseek-harness|[GitHub](https://github.com/Dominic789654/awesome-deepseek-harness)|按可视化 / PPT / 编码 / Agents / Loops（auto-research）分类的 DSH 插件、技能、MCP 服务器与 UI 精选。|
+|dsh-find-plugins|[GitHub](https://github.com/Nagi-ovo/dsh-find-plugins)|一个"找插件的技能"：让 dsh 自己在 GitHub 搜索、安装并验证插件。|
+|deepseek-harness-plugin-mcp|[GitHub](https://github.com/bobleer/deepseek-harness-plugin-mcp)|把 dsh 插件目录暴露为 MCP 服务器，任意 Agent 都能发现与运行 DSH 插件。|
+|Deep Code Agent Skills|[链接](https://deepcode.vegamo.cn/en/docs/configuration/agent-skills)|面向 DeepSeek-V4 的终端编码助手 [Deep Code](https://github.com/lessweb/deepcode-cli) 的技能配置文档，已登上 agentskills.io 采纳名单。|
+|dsh-plugin topic|[GitHub](https://github.com/topics/dsh-plugin)|官方指定的插件发现入口，发布插件请打上此 topic。|
 
 ### 工具与基础设施
 

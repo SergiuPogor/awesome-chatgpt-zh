@@ -106,6 +106,7 @@ print(resp.choices[0].message.content)
 - **峰谷计费**：高峰时段为 UTC 01:00–04:00 与 06:00–10:00（周一至周五，约合北京时间 09:00–12:00、14:00–18:00），其余时间（含周末）为低谷价，**低谷价为高峰价的 50%**，适合把批量 / 离线任务排到低谷跑。
 - **上下文硬盘缓存**：DeepSeek 首创、默认开启、无需改代码；命中部分只收未命中价格的约 1/30，长系统提示、多轮对话与 Agent 工作流可省 80%+ 成本。详见 [Context Caching](https://api-docs.deepseek.com/guides/kv_cache)。
 - **免费额度**：新注册账号赠送试用额度；网页版 / App 完全免费，没有付费订阅档。
+- 提示写法与思考模式技巧见 [DeepSeek V4 思考模式提示技巧](ChatGPT_prompts.md#deepseek-v4-思考模式提示技巧)。
 - 官方价格页：[Models & Pricing](https://api-docs.deepseek.com/quick_start/pricing)。
 
 ### 官方指南索引
@@ -152,7 +153,7 @@ V4 原生支持 **OpenAI Responses API**，OpenAI Codex CLI 可通过自定义 p
 | Qwen Code | 终端 Agent | 内置 DeepSeek 支持 | [GitHub](https://github.com/QwenLM/qwen-code) |
 | GitHub Copilot / Copilot CLI | IDE / 终端 | BYOK 自定义模型 | [链接](https://github.com/features/copilot) |
 | Hermes Agent | 自我改进 Agent（Nous Research） | OpenAI 兼容 | [GitHub](https://github.com/NousResearch/hermes-agent) |
-| Deep Code | DeepSeek-V4 专用终端助手，深度思考 / 推理强度可控 | 原生 | [awesome-deepseek-agent](https://github.com/deepseek-ai/awesome-deepseek-agent) |
+| Deep Code | DeepSeek-V4 专用终端编码助手，深度思考 / 推理强度可控，支持 Agent Skills 与 MCP | 原生 | [GitHub](https://github.com/lessweb/deepcode-cli) ・[官网](https://deepcode.vegamo.cn/) |
 | DeepSeek-TUI | Rust 终端编码工具，沙箱工具与 MCP | 原生 | [awesome-deepseek-agent](https://github.com/deepseek-ai/awesome-deepseek-agent) |
 | DeepSeek-Reasonix | DeepSeek 原生终端编码 Agent（Go），围绕前缀缓存稳定性设计 | 原生 | [GitHub](https://github.com/esengine/DeepSeek-Reasonix) |
 | Langcli | 100% 兼容 Claude Code 的多模型 CLI | Anthropic 兼容 | [awesome-deepseek-agent](https://github.com/deepseek-ai/awesome-deepseek-agent) |
@@ -162,14 +163,46 @@ V4 原生支持 **OpenAI Responses API**，OpenAI Codex CLI 可通过自定义 p
 
 ## deepseek-harness：官方 Agent 框架
 
-2026 年 DeepSeek 组建 Harness 团队，推出开源 Agent 框架 **deepseek-harness（dsh）**——"Everything is a Plugin"，基于 Cordis 插件框架构建，目前处于开发者预览阶段。
+2026 年 8 月 13 日（与 V4-Pro GA 同日），DeepSeek 开源了官方 Agent 框架 **deepseek-harness（dsh）**，发布不到两周即突破 19 万 star，成为 GitHub 史上增长最快的项目之一。它的口号是 **"Everything is a Plugin"**：模型适配器、工具注册表、会话日志、Agent 循环本身乃至 Web UI 全部是可替换的插件，底层由 Cordis 框架驱动（其设计见论文 *A Programming Paradigm for Spatiotemporal Composability*）。目前处于开发者预览（v0.1.x），官方明确提示会有破坏性变更。
+
+### 核心概念
+
+| 概念 | 说明 |
+|------|------|
+| Profile / Bundle | 运行中的 dsh 是启动时按层组合出的插件树：`dsh-base`（模型适配、工具、持久化、沙箱与审批策略）→ `dsh-web-app` 或 `dsh-headless` → 用户的 `cordis.patch.yml` 覆盖；`dsh --profile web --dump-config` 可打印本机实际启动的插件树，任一行都能被 patch 替换 |
+| Capability Seam（能力接缝） | 每个能力由"服务定义 + 服务提供者 + 消费者"三角构成，换一个 provider 即可整体切换——例如把文件系统与子进程 provider 指向远程沙箱，Bash / PTY / LSP 全部随之迁移 |
+| MCP 客户端 | 内置 MCP 桥接第三方工具服务器 |
+| Hook 协议 | 拦截 Agent 动作的钩子，**兼容 Claude Code 与 Codex 的 Hook 格式** |
+| Skill 系统 | Markdown 指令集，由 SkillRegistry 管理，支持全局 / Agent 级作用域，兼容 Agent Skills 开放标准 |
+| 子 Agent / Agent Teams | 子 Agent provider 可从"新建子进程"到"委托给另一产品"自由替换；实验性 Agent Teams 提供名册、任务板与邮箱 |
+| 会话日志 | 追加式事件日志是模型上下文的唯一来源（"模型可见即已记录"），fork / resume / 转录 / 遥测都由此派生 |
+| Python SDK | 官方提供 Python SDK，可在脚本中驱动 dsh |
+
+### 快速上手
+
+```bash
+npx @deepseek-ai/dsh web        # 启动 Web UI，默认 http://127.0.0.1:3080
+# 或从源码运行
+git clone https://github.com/deepseek-ai/deepseek-harness.git && cd deepseek-harness
+pnpm install && pnpm run build && pnpm dsh web
+```
+
+默认使用 DeepSeek 官方 API（在 Providers 页面填 Key），也可在 Providers 中添加任意 OpenAI 兼容端点或本地模型。
+
+### 资源
 
 | 资源 | 链接 | 说明 |
 |------|------|------|
-| deepseek-harness | [GitHub](https://github.com/deepseek-ai/deepseek-harness) | 官方仓库，`npx @deepseek-ai/dsh web` 即可在本地 `127.0.0.1:3080` 启动 Web UI |
-| dsh-plugin 话题 | [GitHub Topics](https://github.com/topics/dsh-plugin) | 社区插件请打上 `dsh-plugin` 标签便于发现 |
-| awesome-dsh-skills | [GitHub](https://github.com/yzfly/awesome-dsh-skills) | 本项目作者维护的 dsh 技能 / 插件中文精选、DSH Skill 规范与 lint 工具 |
-| DeepSeek 官方 Discord | [Discord](https://discord.gg/Tc7c45Zzu5) | Harness 与模型讨论社区 |
+| deepseek-harness | [GitHub](https://github.com/deepseek-ai/deepseek-harness) | 官方仓库（MIT），README 提供中文版 |
+| 用户指南（中文） | [Web UI 指南](https://github.com/deepseek-ai/deepseek-harness/blob/main/docs/user/guide/index.zh.md) ・[模型供应商](https://github.com/deepseek-ai/deepseek-harness/blob/main/docs/user/guide/providers.zh.md) ・[Python SDK](https://github.com/deepseek-ai/deepseek-harness/blob/main/docs/user/guide/python-sdk.zh.md) | 安装、配置 API Key、接入自定义供应商与 SDK 用法 |
+| 架构文档（中文） | [架构](https://github.com/deepseek-ai/deepseek-harness/blob/main/docs/architecture.zh.md) ・[Cordis 入门](https://github.com/deepseek-ai/deepseek-harness/blob/main/docs/cordis-primer.zh.md) ・[工具目录](https://github.com/deepseek-ai/deepseek-harness/blob/main/docs/tool-catalog.zh.md) | 插件树、事件模型、Turn / Step 流程、能力接缝，写插件前必读 |
+| dsh-plugin topic | [GitHub Topics](https://github.com/topics/dsh-plugin) | 官方指定的插件发现入口，发布插件请打上此 topic |
+| awesome-dsh-skills | [GitHub](https://github.com/yzfly/awesome-dsh-skills) | 本项目作者维护：700+ dsh 技能 / 插件仓库自动收录与每日校验、DSH Skill Spec 规范、`dsh-skill-lint` 校验器、2026 Q3 精选版，可搜索站点 [code.jiangshu.ai/awesome-dsh-skills](https://code.jiangshu.ai/awesome-dsh-skills) |
+| awesome-deepseek-harness | [0xsline](https://github.com/0xsline/awesome-deepseek-harness) ・[Dominic789654](https://github.com/Dominic789654/awesome-deepseek-harness) | 社区整理的 DSH 插件、技能、MCP 服务器、patch / profile 层与 UI 列表 |
+| dsh-find-plugins | [GitHub](https://github.com/Nagi-ovo/dsh-find-plugins) | 让 dsh 自己搜索、安装并验证 GitHub 插件的技能 |
+| deepseek-harness-plugin-mcp | [GitHub](https://github.com/bobleer/deepseek-harness-plugin-mcp) | 把 dsh 插件目录暴露为 MCP 服务器 |
+| GitHub Discussions | [链接](https://github.com/deepseek-ai/deepseek-harness/discussions) | 官方反馈与问题讨论区 |
+| DeepSeek Harness Discord | [Discord](https://discord.gg/Ycq5dCaS4) | 官方社区 |
 
 ## 本地部署与推理
 
@@ -299,6 +332,6 @@ V4 系列为开放权重，可自建服务。V4-Flash（13B 激活）是本地 /
 | awesome-deepseek-integration | [GitHub](https://github.com/deepseek-ai/awesome-deepseek-integration) | 官方维护：接入 DeepSeek 的 100+ 应用、框架、插件（中英双语） |
 | awesome-deepseek-agent | [GitHub](https://github.com/deepseek-ai/awesome-deepseek-agent) | 官方维护：可直接切换到 V4 的编程智能体 / Agent 平台接入指南 |
 | awesome-deepseek-coder | [GitHub](https://github.com/deepseek-ai/awesome-deepseek-coder) | 官方维护：DeepSeek Coder 相关项目 |
-| DeepSeek 官方 Discord | [Discord](https://discord.gg/Tc7c45Zzu5) | 官方社区 |
+| DeepSeek Harness Discord | [Discord](https://discord.gg/Ycq5dCaS4) | 官方社区 |
 | DeepSeek 微信公众号 | 「DeepSeek」 | 官方公告中文渠道 |
 | 本项目电报群 | [ChatGPT 精选](https://t.me/AwesomeChatGPT) | 交流 DeepSeek / ChatGPT 使用心得 |

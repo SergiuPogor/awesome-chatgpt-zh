@@ -29,8 +29,9 @@
 | Omnigent | [GitHub](https://github.com/omnigent-ai/omnigent) | 开源 AI Agent 框架与"元 harness"（Python，Apache-2.0），可统一编排 Claude Code、Codex、Cursor、pi 及自定义 Agent，无需改写即可热插拔 harness，并提供策略管控、沙箱与跨设备实时协作 |
 | ruflo | [GitHub](https://github.com/ruvnet/ruflo) | 面向 Claude 的开源 Agent"元 harness"（TypeScript，MIT），可部署多智能体群（swarm）、编排自主工作流，内置自适应记忆、自学习群体智能与 RAG 集成，原生对接 Claude Code / Codex |
 | DeepSeek-Reasonix | [GitHub](https://github.com/esengine/DeepSeek-Reasonix) | DeepSeek 原生的终端 AI 编码 Agent（Go，MIT），围绕前缀缓存（prefix-cache）稳定性设计，适合长时间常驻运行 |
-| deepseek-harness (dsh) | [GitHub](https://github.com/deepseek-ai/deepseek-harness) | DeepSeek 官方开源 Agent 框架（开发者预览），"Everything is a Plugin"，基于 Cordis 插件体系，`npx @deepseek-ai/dsh web` 启动本地 Web UI；技能 / 插件精选见 [awesome-dsh-skills](https://github.com/yzfly/awesome-dsh-skills) |
-| Deep Code / DeepSeek-TUI | [awesome-deepseek-agent](https://github.com/deepseek-ai/awesome-deepseek-agent) | 官方 awesome 列表收录的 DeepSeek-V4 专用终端编码工具：Deep Code 支持深度思考与推理强度控制，DeepSeek-TUI 为 Rust 实现、带沙箱工具与 MCP |
+| **deepseek-harness (dsh)** | [GitHub](https://github.com/deepseek-ai/deepseek-harness) | DeepSeek 官方开源 Agent 框架（2026-08-13 发布，MIT，两周破 19 万 star），"Everything is a Plugin"、Cordis 驱动：模型、工具、会话、沙箱、循环、UI 全部可替换；内置 MCP 客户端、兼容 Claude Code / Codex 的 Hook 协议与 Agent Skills；`npx @deepseek-ai/dsh web` 启动本地 Web UI，亦有 headless 与 Python SDK。详见 [DeepSeek 生态指南](DeepSeek.md#deepseek-harness官方-agent-框架)，技能 / 插件精选见 [awesome-dsh-skills](https://github.com/yzfly/awesome-dsh-skills) |
+| Deep Code | [GitHub](https://github.com/lessweb/deepcode-cli) ・[官网](https://deepcode.vegamo.cn/) | 专为 DeepSeek-V4 优化的开源终端编码助手，支持深度思考、推理强度控制、Agent Skills 与 MCP，已列入 agentskills.io 采纳名单 |
+| DeepSeek-TUI | [awesome-deepseek-agent](https://github.com/deepseek-ai/awesome-deepseek-agent) | Rust 实现的 DeepSeek 终端编码工具，带沙箱工具与 MCP 支持 |
 
 ## IDE / 编辑器编码 Agent
 

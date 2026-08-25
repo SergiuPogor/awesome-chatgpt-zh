@@ -2,7 +2,7 @@
 
 2025 年起，AI 编程从"代码补全/对话"全面走向"编程智能体（Coding Agent）"——以 **Claude Code**、**OpenAI Codex** 为代表的终端 Agent 能自主读写代码库、运行命令、跑测试、提交 PR，把多步骤工程任务端到端交付。本章汇总当下主流的编程智能体、IDE 工具、自主软件工程 Agent、评测基准与学习资源。
 
-> 相关：通用智能体见 [AGI](AGI.md)，Agent 开发框架见 [应用开发指南](ChatGPT_dev.md)，工具连接协议见 [MCP 指南](MCP.md)。
+> 相关：用 DeepSeek-V4 驱动 Claude Code / Codex / OpenCode 的配置见 [DeepSeek 生态指南](DeepSeek.md#在编程智能体中使用-deepseek)，通用智能体见 [AGI](AGI.md)，Agent 开发框架见 [应用开发指南](ChatGPT_dev.md)，工具连接协议见 [MCP 指南](MCP.md)。
 
 ## 命令行 / 终端编码 Agent
 
@@ -29,6 +29,8 @@
 | Omnigent | [GitHub](https://github.com/omnigent-ai/omnigent) | 开源 AI Agent 框架与"元 harness"（Python，Apache-2.0），可统一编排 Claude Code、Codex、Cursor、pi 及自定义 Agent，无需改写即可热插拔 harness，并提供策略管控、沙箱与跨设备实时协作 |
 | ruflo | [GitHub](https://github.com/ruvnet/ruflo) | 面向 Claude 的开源 Agent"元 harness"（TypeScript，MIT），可部署多智能体群（swarm）、编排自主工作流，内置自适应记忆、自学习群体智能与 RAG 集成，原生对接 Claude Code / Codex |
 | DeepSeek-Reasonix | [GitHub](https://github.com/esengine/DeepSeek-Reasonix) | DeepSeek 原生的终端 AI 编码 Agent（Go，MIT），围绕前缀缓存（prefix-cache）稳定性设计，适合长时间常驻运行 |
+| deepseek-harness (dsh) | [GitHub](https://github.com/deepseek-ai/deepseek-harness) | DeepSeek 官方开源 Agent 框架（开发者预览），"Everything is a Plugin"，基于 Cordis 插件体系，`npx @deepseek-ai/dsh web` 启动本地 Web UI；技能 / 插件精选见 [awesome-dsh-skills](https://github.com/yzfly/awesome-dsh-skills) |
+| Deep Code / DeepSeek-TUI | [awesome-deepseek-agent](https://github.com/deepseek-ai/awesome-deepseek-agent) | 官方 awesome 列表收录的 DeepSeek-V4 专用终端编码工具：Deep Code 支持深度思考与推理强度控制，DeepSeek-TUI 为 Rust 实现、带沙箱工具与 MCP |
 
 ## IDE / 编辑器编码 Agent
 

@@ -44,7 +44,7 @@ ChatGPT 由 OpenAI 开发，是目前全球用户量最大的 AI 对话产品。
 | Microsoft Copilot | [copilot.microsoft.com](https://copilot.microsoft.com) | 微软出品，与 Microsoft 365 / Windows 深度融合，办公场景体验佳 |
 | Le Chat (Mistral) | [chat.mistral.ai](https://chat.mistral.ai) | 法国 Mistral 出品，响应快，背后模型多为开放权重，可自托管 |
 | Pi | [pi.ai](https://pi.ai) | Inflection AI 出品，主打高情商陪伴式对话，语气自然亲和 |
-| DeepSeek | [chat.deepseek.com](https://chat.deepseek.com) | 深度求索出品，性能强、性价比高的开源模型，国内外广受关注 |
+| DeepSeek | [chat.deepseek.com](https://chat.deepseek.com) | 深度求索出品，网页版与 App 免费使用 DeepSeek-V4（深度思考 + 联网搜索），开放权重、性价比极高；生态与 API 见 [DeepSeek 生态指南](DeepSeek.md) |
 
 ### 国产 AI 助手
 

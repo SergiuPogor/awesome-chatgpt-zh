@@ -8,7 +8,7 @@
 - [Claude](https://claude.ai) — Anthropic 出品，长文本理解、写作与代码能力出众的安全型助手。
 - [Gemini](https://gemini.google.com) — Google 的多模态大模型，深度集成谷歌全家桶。
 - [Grok](https://grok.com) — xAI（马斯克）推出，强调实时信息与个性化的对话助手。
-- [DeepSeek](https://www.deepseek.com) — 国产开源大模型黑马，推理、数学与代码能力强且免费。
+- [DeepSeek](https://www.deepseek.com) — 国产开源大模型代表，V4 系列推理、数学与编码能力比肩顶级闭源模型，网页与 App 免费；详见 [DeepSeek 生态指南](DeepSeek.md)。
 - [Kimi](https://kimi.moonshot.cn) — 月之暗面出品，擅长超长文本处理与深度推理的国产助手。
 - [豆包](https://www.doubao.com) — 字节跳动推出的国产 AI 助手，用户规模领先，多模态全能。
 - [通义千问](https://tongyi.aliyun.com) — 阿里云的大模型助手，支持多轮对话、多模态与多语言。

@@ -131,7 +131,7 @@
 |[OpenRouter](https://openrouter.ai/)|-|统一接口聚合数百个大模型，完全兼容 OpenAI 格式，自动故障转移与成本优选|
 |[Anthropic Claude API](https://docs.anthropic.com/en/home)|-|Anthropic 官方 Claude 模型 API 与开发者文档|
 |[Google Gemini API](https://ai.google.dev/gemini-api/docs)|-|Google 官方 Gemini 模型 API 与开发者文档|
-|[DeepSeek API](https://api-docs.deepseek.com/)|-|DeepSeek 官方 API 平台，兼容 OpenAI 与 Anthropic 格式|
+|[DeepSeek API](https://api-docs.deepseek.com/)|-|DeepSeek 官方 API 平台，兼容 OpenAI（Chat Completions / Responses）与 Anthropic 格式，V4 系列 1M 上下文、峰谷计费与硬盘缓存；详见 [DeepSeek 生态指南](DeepSeek.md)|
 |[Moonshot (Kimi) API](https://platform.moonshot.ai/)|-|月之暗面 Kimi 开放平台，提供与 OpenAI 兼容的大模型 API|
 |[智谱 BigModel](https://open.bigmodel.cn/)|-|智谱 AI 开放平台，提供 GLM 系列大模型 API 及智能体、知识库等开发能力|
 |[llmtrim](https://github.com/fkiene/llmtrim)|![GitHub Repo stars](https://badgen.net/github/stars/fkiene/llmtrim)|本地代理，在请求发出前无损压缩 LLM API 调用以省费用（实测 -31% 输入 / -74% 输出），不改变回答、不额外调用模型；适配任意供应商，另提供 MCP server 与多语言可嵌入库（Rust/Python/Ruby/Kotlin/Swift/JS-TS）|

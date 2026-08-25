@@ -4,7 +4,7 @@
 
 ### 2024–2026 主流大模型
 
-> 时间与版本截至 2026 年初，模型迭代极快，请以官方渠道为准。
+> 时间与版本截至 2026 年 8 月，模型迭代极快，请以官方渠道为准。
 
 #### 国外闭源旗舰模型
 
@@ -33,8 +33,12 @@
 
 | 模型 | 开发方 | 链接 | 中文简介（关键能力与发布时间） |
 |------|--------|------|--------------------------------|
+| **DeepSeek-V4（Pro / Flash）** | 深度求索 | [HuggingFace](https://huggingface.co/collections/deepseek-ai/deepseek-v4) ・[生态指南](DeepSeek.md) | 2026 年 4 月预览、8 月 GA。Pro 1.6T/49B 激活、Flash 284B/13B 激活，DSA 稀疏注意力，1M 上下文，MIT 开放权重，支持 low/high/max 推理强度，Agent 与编码能力比肩顶级闭源模型。 |
+| DeepSeek-V3.2 / V3.2-Speciale | 深度求索 | [论文](https://arxiv.org/abs/2512.02556) | 2025 年 12 月发布，引入 DSA 稀疏注意力，正式版比肩 GPT-5；Speciale 在 IMO / IOI / ICPC 2025 达金牌水平。 |
+| DeepSeek-V3.1 / V3.1-Terminus | 深度求索 | [HuggingFace](https://huggingface.co/deepseek-ai/DeepSeek-V3.1-Terminus) | 2025 年 8–9 月，混合推理架构（思考 / 非思考双模式），面向 Agent 工具调用优化。 |
 | DeepSeek-V3 | 深度求索 | [GitHub](https://github.com/deepseek-ai/DeepSeek-V3) | 2024 年 12 月发布，671B/37B 激活 MoE，以极高性价比对标 GPT-4 级别。 |
-| DeepSeek-R1 | 深度求索 | [GitHub](https://github.com/deepseek-ai/DeepSeek-R1) | 2025 年 1 月发布的开源推理模型，比肩 o1，掀起全球开源推理浪潮。 |
+| DeepSeek-R1 | 深度求索 | [GitHub](https://github.com/deepseek-ai/DeepSeek-R1) | 2025 年 1 月发布的开源推理模型，比肩 o1，掀起全球开源推理浪潮；5 月 R1-0528 升级版。 |
+| DeepSeekMath-V2 / OCR-2 | 深度求索 | [Math-V2](https://github.com/deepseek-ai/DeepSeek-Math-V2) ・[OCR-2](https://github.com/deepseek-ai/DeepSeek-OCR-2) | 专项模型：Math-V2（2025-11）自我可验证数学推理达 IMO 金牌；OCR-2（2026-01）Visual Causal Flow 文档理解。 |
 | Qwen3（通义千问 3） | 阿里巴巴 | [GitHub](https://github.com/QwenLM/Qwen3) | 2025 年 4 月发布，Apache 2.0 开源，0.6B–235B 多规格，首推混合推理，支持 119 种语言与 MCP。 |
 | GLM-4.6 / GLM-4.5 | 智谱 AI | [HuggingFace](https://huggingface.co/zai-org/GLM-4.5) | GLM-4.5（2025 年 7 月）355B/32B MoE，MIT 协议开源，面向智能体；GLM-4.6 进一步升级。 |
 | Kimi K2 / K2 Thinking | 月之暗面 | [GitHub](https://github.com/moonshotai/Kimi-K2) | K2（2025 年 7 月）1T/32B MoE 开源；K2 Thinking（11 月）多项基准超 GPT-5、Sonnet 4.5。 |

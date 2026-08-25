@@ -9,7 +9,7 @@
 [为方便国内访问, GitLab 镜像同步更新~](https://gitlab.com/awesomeai/awesome-chatgpt-zh)
 
 
-ChatGPT 中文指南项目旨在帮助中文用户了解和使用 ChatGPT 及前沿 AI 技术。我们收集了各种免费和付费的 ChatGPT 资源、高效使用中文与大模型交流的方法、应用开发的相关资源，以及基于大模型能力的生产力工具。项目持续跟进 AI 前沿：从 GPT-5、Claude 4、DeepSeek、Gemini 3 等最新大模型，到 Claude Skills、MCP（模型上下文协议）、AI Agent 智能体开发等当代核心主题，您都能在这里找到丰富的工具、应用与示例。
+ChatGPT 中文指南项目旨在帮助中文用户了解和使用 ChatGPT 及前沿 AI 技术。我们收集了各种免费和付费的 ChatGPT 资源、高效使用中文与大模型交流的方法、应用开发的相关资源，以及基于大模型能力的生产力工具。项目持续跟进 AI 前沿：从 GPT-5、Claude 4、DeepSeek-V4、Gemini 3 等最新大模型，到 Claude Skills、MCP（模型上下文协议）、AI Agent 智能体开发等当代核心主题，您都能在这里找到丰富的工具、应用与示例。
 
 - [🤖 ChatGPT 中文指南 🤖](#-chatgpt-中文指南-)
   - [什么是 ChatGPT ?](#什么是-chatgpt-)
@@ -21,6 +21,7 @@ ChatGPT 中文指南项目旨在帮助中文用户了解和使用 ChatGPT 及前
   - [ChatGPT 应用](#chatgpt-应用)
   - [ChatGPT 扩展能力 (GPTs / Actions)](#chatgpt-扩展能力-gpts--actions)
   - [ChatGPT 应用开发指南](#chatgpt-应用开发指南)
+  - [DeepSeek 生态指南](#deepseek-生态指南)
   - [Claude Skills 指南](#claude-skills-指南)
   - [MCP 模型上下文协议指南](#mcp-模型上下文协议指南)
   - [Coding Agents 编程智能体](#coding-agents-编程智能体)
@@ -54,6 +55,10 @@ ChatGPT 中文指南项目旨在帮助中文用户了解和使用 ChatGPT 及前
 ## [ChatGPT 应用](docs/ChatGPT_tools.md)
 ## [ChatGPT 扩展能力 (GPTs / Actions)](docs/ChatGPT_plugins.md)
 ## [ChatGPT 应用开发指南](docs/ChatGPT_dev.md)
+## [DeepSeek 生态指南](docs/DeepSeek.md)
+
+DeepSeek 已从"模型提供方"演进为覆盖模型、API、编程智能体、Agent 框架与开源基础设施的完整生态：2026 年 DeepSeek-V4（Pro / Flash，1M 上下文，开放权重）正式 GA，官方 Agent 框架 deepseek-harness 上线。本节汇总官方资源、模型谱系、API 与价格、Claude Code / Codex / OpenClaw 等编程智能体接入、本地部署、第三方云平台、客户端工具、Open Infra 与复现学习资源。
+
 ## [Claude Skills 指南](docs/Claude_Skills.md)
 
 Claude Skills（Agent Skills）让 AI 智能体按需加载专业能力，是构建可复用、可组合智能体的新范式。本节精选了官方资源、聚合列表、知名技能仓库与工具教程；完整中文资源大全见作者维护的 [awesome-claude-skills-zh](https://github.com/yzfly/awesome-claude-skills-zh)。

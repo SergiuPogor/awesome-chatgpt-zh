@@ -170,7 +170,7 @@ Anthropic 在机理可解释性、AI 对齐安全与 Agent 工程上有大量奠
 
 ## DeepSeek（深度求索）
 
-DeepSeek 以 MLA、DeepSeekMoE、GRPO、纯 RL 推理等创新和开源基础设施，成为国产大模型的技术标杆。
+DeepSeek 以 MLA、DeepSeekMoE、GRPO、纯 RL 推理、DSA 稀疏注意力等创新和开源基础设施，成为国产大模型的技术标杆。生态、API 与工具接入见 [DeepSeek 生态指南](DeepSeek.md)。
 
 ### 基础模型与论文
 
@@ -182,6 +182,8 @@ DeepSeek 以 MLA、DeepSeekMoE、GRPO、纯 RL 推理等创新和开源基础设
 |DeepSeek-V3 Technical Report|[链接](https://arxiv.org/abs/2412.19437)|2024-12|671B 参数（激活 37B）MoE 模型，首创无辅助损失负载均衡与多 Token 预测。|
 |DeepSeek-V3.1-Terminus|[链接](https://huggingface.co/deepseek-ai/DeepSeek-V3.1-Terminus)|2025-09|支持思考/非思考双模式的混合推理模型，优化语言一致性与智能体工具调用。|
 |DeepSeek-V3.2|[链接](https://arxiv.org/abs/2512.02556)|2025-12|引入 DeepSeek 稀疏注意力（DSA）与大规模 RL，高算力版性能比肩 GPT-5。|
+|DeepSeek-V4 Technical Report|[链接](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro)|2026-04|V4-Pro（1.6T/49B）与 V4-Flash（284B/13B），Token-wise 压缩 + DSA 混合注意力，1M 上下文下 FLOPs 仅前代 27%、KV 缓存 10%。|
+|Engram: Conditional Memory via Scalable Lookup|[链接](https://github.com/deepseek-ai/Engram)|2026-01|把"条件记忆"作为 MoE 之外的新稀疏轴：N-gram 常数时间查表，同预算下 Engram-27B 全面超越 MoE 基线。|
 
 ### 推理模型
 
@@ -211,6 +213,9 @@ DeepSeek 以 MLA、DeepSeekMoE、GRPO、纯 RL 推理等创新和开源基础设
 |DeepEP|[链接](https://github.com/deepseek-ai/DeepEP)|2025-02|面向 MoE 的专家并行通信库，加速模型训练与推理。|
 |DeepGEMM|[链接](https://github.com/deepseek-ai/DeepGEMM)|2025-02|约 300 行核心代码的 FP8 GEMM 库，支撑 V3/R1 的训练与推理。|
 |DeepSeek-OCR: Contexts Optical Compression|[链接](https://arxiv.org/abs/2510.18234)|2025-10|用光学 2D 映射压缩长上下文，10 倍压缩比下 OCR 精度仍达 97%。|
+|DeepSeek-OCR-2: Visual Causal Flow|[链接](https://github.com/deepseek-ai/DeepSeek-OCR-2)|2026-01|DeepEncoder V2 打破固定扫描顺序，按图像语义动态重排视觉 token。|
+|DualPipe / EPLB / 3FS / smallpond|[链接](https://github.com/deepseek-ai/open-infra-index)|2025-02|双向流水并行、专家负载均衡、6.6 TiB/s 分布式文件系统与轻量数据处理框架。|
+|deepseek-harness（dsh）|[链接](https://github.com/deepseek-ai/deepseek-harness)|2026|官方开源 Agent 框架，"Everything is a Plugin"，`npx @deepseek-ai/dsh web` 即可启动。|
 
 ## Andrej Karpathy
 

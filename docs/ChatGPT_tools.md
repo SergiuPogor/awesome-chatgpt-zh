@@ -394,6 +394,7 @@ Chat-GPT 超级挂件，以侧边窗口的形式提供服务，可以在阅读�
 * [邮件助手：ChatGPT for Email - Remail](https://chrome.google.com/webstore/detail/chatgpt-for-email-remail/jjplpolfahlhoodebebfjdbpcbopcmlk)
 * [分享你与 ChatGPT 的对话：ShareGPT](https://github.com/domeccleston/sharegpt)
 * [让 ChatGPT 联网: WebChatGPT](https://github.com/qunash/chatgpt-advanced)
+* [ChatShell（拾贝）](https://www.chatshellexport.com/)：在浏览器本地将 ChatGPT 对话导出为 PDF、DOCX、Markdown 和 JSON，支持批量导出并保留 LaTeX 公式、代码块与表格。
 
 ### 更多工具
 

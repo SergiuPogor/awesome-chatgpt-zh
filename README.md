@@ -125,9 +125,20 @@ MCP（Model Context Protocol，模型上下文协议）是让 AI 无缝连接外
 
 我们非常感谢所有为这个项目做出贡献的个人，你们的努力和付出使这个项目不断进步和发展：
 
+[![Contributors](https://contrib.rocks/image?repo=EmbraceAGI/awesome-chatgpt-zh)](https://github.com/EmbraceAGI/awesome-chatgpt-zh/graphs/contributors)
+
 - [SlimeNull](https://github.com/SlimeNull)
 - [SimFG](https://github.com/SimFG)
-- [wzpan](https://github.com/wzpan)
+- [Yohjisakamoto](https://github.com/Yohjisakamoto)
 - [eli64s](https://github.com/eli64s)
+- [wzpan](https://github.com/wzpan)
+- [zhaoweiguo](https://github.com/zhaoweiguo)
+- [yuanzui0728](https://github.com/yuanzui0728)
+- [Prismor](https://github.com/Prismor)
+- [Simon-He95](https://github.com/Simon-He95)
+- [cf-jx](https://github.com/cf-jx)
+- [reacher-z](https://github.com/reacher-z)
+
+完整名单见 [Contributors 页面](https://github.com/EmbraceAGI/awesome-chatgpt-zh/graphs/contributors)。
 
 如果您做出了重大贡献并希望得到认可，请随时与我们联系或提交一个更新此部分的 Pull Request。

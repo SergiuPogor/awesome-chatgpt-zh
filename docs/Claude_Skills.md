@@ -79,6 +79,7 @@ DeepSeek 官方 Agent 框架 [deepseek-harness（dsh）](DeepSeek.md#deepseek-ha
 |aiskillstore/marketplace|[GitHub](https://github.com/aiskillstore/marketplace)|经安全审计的技能市场，支持 Claude、Codex、Claude Code 一键安装与质量校验。|
 |manutej/luxor-claude-marketplace|[GitHub](https://github.com/manutej/luxor-claude-marketplace)|专业 Claude Code 市场，含 67 技能、28 命令、30 agents、15 工作流共 140 个开发工具。|
 |Claude Code Marketplaces 目录站|[链接](https://claudemarketplaces.com/)|聚合插件、技能与 MCP 服务器的市场目录站，便于发现与安装。|
+|Skillselion 技能目录站|[链接](https://skillselion.com)|聚合 Claude Code 技能、MCP 服务器与插件市场的目录站，按安装量与 GitHub stars 排名，便于发现与安装。|
 |microsoft/SkillOpt|[GitHub](https://github.com/microsoft/SkillOpt)|微软开源的文本空间优化器，为冻结参数的 LLM 智能体训练可复用的自然语言技能：基于轨迹驱动迭代、验证门控更新，产出可直接部署的 best_skill.md 技能文件。|
 
 ### 文章与教程

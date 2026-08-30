@@ -64,6 +64,11 @@ MCP（Model Context Protocol，模型上下文协议）是 Anthropic 于 2024 �
 |GitHub MCP Server（官方）|[GitHub](https://github.com/github/github-mcp-server)|GitHub 官方 MCP，可读取 PR、提交评审、跨仓库搜索代码、管理 Issue 与触发工作流。|
 |Git MCP（官方参考）|[GitHub](https://github.com/modelcontextprotocol/servers/tree/main/src/git)|官方 Git 仓库读写与操作服务器。|
 |codexpro|[GitHub](https://github.com/rebel0789/codexpro)|通过 MCP 把 ChatGPT 开发者模式当作本地编码 Agent，让其读写、操作你本机的代码仓库。|
+|FastCtx|[GitHub](https://github.com/yc-duan/fastctx)|Rust 本地工具运行时（Apache-2.0）：为 Agent 提供省上下文的文件读取、内容搜索、批量替换与 Bash 执行，中英文档。|
+|Coding Tools MCP|[GitHub](https://github.com/xyTom/coding-tools-mcp)|模型中立的编码运行时，通过 MCP 给任意聊天 / Agent 一双「安全的手」操作代码库。|
+|x64dbg-MCP Server|[GitHub](https://github.com/duty1g/x64dbg-mcp-server)|Zig 编写的 x64dbg 原生插件（零依赖单文件），把调试器 84 个能力（反汇编、断点、内存、PE 分析等）暴露给 MCP，做 Agent 逆向。|
+|Godot-MCP|[GitHub](https://github.com/IvanMurzak/Godot-MCP)|Godot 编辑器插件（Apache-2.0）：让 Claude / Cursor / Copilot 创建节点、编辑场景、驱动项目，是 Unity-MCP 的 Godot 版。|
+|figwright|[GitHub](https://github.com/awdr74100/figwright)|免费的双向 Figma MCP：设计稿→框架感知代码，也能把代码改动推回画布，配套 Figma 插件而非 Dev Mode 席位。|
 
 ### MCP Servers — 数据库与文件
 
@@ -80,6 +85,7 @@ MCP（Model Context Protocol，模型上下文协议）是 Anthropic 于 2024 �
 |Brave Search MCP（官方）|[GitHub](https://github.com/brave/brave-search-mcp-server)|Brave 官方搜索 MCP，提供网页、本地 POI、图片、视频、新闻搜索。|
 |Firecrawl MCP|[GitHub](https://github.com/mendableai/firecrawl-mcp-server)|Firecrawl 官方网页抓取 MCP，支持批量抓取、结构化提取，可云端或自托管。|
 |Context7 MCP|[GitHub](https://github.com/upstash/context7)|为 LLM 提供最新版本的库文档与代码示例，解决依赖文档过时问题。|
+|OpenOSINT|[GitHub](https://github.com/OpenOSINT/OpenOSINT)|AI 驱动的 OSINT 情报 Agent（MIT），19 个工具，提供 REPL、MCP server 与 CLI 三种用法。|
 
 ### MCP Servers — 云平台与第三方官方服务
 
@@ -89,6 +95,8 @@ MCP（Model Context Protocol，模型上下文协议）是 Anthropic 于 2024 �
 |Stripe Agent Toolkit|[GitHub](https://github.com/stripe/agent-toolkit)|Stripe 官方 Agent 工具包，含 MCP，安全管理客户、支付与订阅。|
 |Sentry MCP|[GitHub](https://github.com/getsentry/sentry-mcp)|Sentry 官方 MCP，让 AI 查询错误监控与问题数据。|
 |Slack MCP Server|[GitHub](https://github.com/korotovsky/slack-mcp-server)|功能强大的 Slack 工作区 MCP，可读取频道、汇总会话、发送消息。|
+|Model Studio CLI（阿里云百炼官方）|[GitHub](https://github.com/modelstudioai/cli)|阿里云百炼官方 CLI（Apache-2.0），面向 Agent 框架暴露 Qwen 对话、图像 / 视频生成、语音、搜索、记忆与知识检索等能力。|
+|Flint（微软）|[GitHub](https://github.com/microsoft/flint-chart)|微软开源的可视化中间语言 + MCP Server（MIT）：Agent 用简单可编辑的图表规格稳定产出美观图表，附多套视觉主题。|
 
 ### MCP Servers — 知识与记忆
 

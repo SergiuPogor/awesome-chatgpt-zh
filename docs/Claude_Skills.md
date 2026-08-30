@@ -55,6 +55,11 @@ Claude Skills（Agent Skills）是 Anthropic 推出的让 AI 智能体按需加�
 |wanshuiyin/Auto-claude-code-research-in-sleep|[GitHub](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep)|ARIS（Auto-Research-In-Sleep）：用于自主 ML 研究的纯 Markdown 轻量技能，无框架、无锁定，内置 13 个研究工作流与持久化 Research Wiki，可跨 Claude Code、Codex、Cursor、Kimi、DeepSeek、GLM 等多种模型使用。|
 |Hacker0x01/claude-power-user|[GitHub](https://github.com/Hacker0x01/claude-power-user)|HackerOne 开源的 Claude Code 核心技能库。|
 |JuliusBrussee/caveman|[GitHub](https://github.com/JuliusBrussee/caveman)|"原始人语气"省 token 的 Claude Code 技能（MIT）：让模型用极简的"原始人"句式表达（why use many token when few token do trick），自称可削减约 65% 输出 token，趣味十足又能省钱。|
+|BuilderIO/skills|[GitHub](https://github.com/BuilderIO/skills)|Builder.io 出品的小而可组合的编码 Agent 技能集（MIT），一条命令安装推荐技能。|
+|jakubkrehel/skills|[GitHub](https://github.com/jakubkrehel/skills)|设计工程师 Jakub Krehel 的界面技能集：UI、排版、色彩、无障碍、布局与产品文案，`better-interface` 一键做整体评审。|
+|JimLiu/baoyu-design|[GitHub](https://github.com/JimLiu/baoyu-design)|宝玉把 Claude Design（claude.ai/design 背后的设计引擎）打包成可移植 Agent Skill，在 Cursor、Claude Code 等本地 Agent 里产出精致 UI。|
+|petergyang/no-ai-slop|[GitHub](https://github.com/petergyang/no-ai-slop)|去除写作中 20+ 种「AI 味」套路而不抹平个人语气的技能（MIT）。|
+|firecrawl/anydoc（skill）|[GitHub](https://github.com/firecrawl/anydoc)|Firecrawl 的文档转 Markdown 库以 Agent Skill 形式分发，让 Agent 直接读懂 Word / PPT / Excel / PDF / EPUB。|
 
 ### DeepSeek Harness 技能生态
 
@@ -81,6 +86,7 @@ DeepSeek 官方 Agent 框架 [deepseek-harness（dsh）](DeepSeek.md#deepseek-ha
 |Claude Code Marketplaces 目录站|[链接](https://claudemarketplaces.com/)|聚合插件、技能与 MCP 服务器的市场目录站，便于发现与安装。|
 |Skillselion 技能目录站|[链接](https://skillselion.com)|聚合 Claude Code 技能、MCP 服务器与插件市场的目录站，按安装量与 GitHub stars 排名，便于发现与安装。|
 |microsoft/SkillOpt|[GitHub](https://github.com/microsoft/SkillOpt)|微软开源的文本空间优化器，为冻结参数的 LLM 智能体训练可复用的自然语言技能：基于轨迹驱动迭代、验证门控更新，产出可直接部署的 best_skill.md 技能文件。|
+|microsoft/skill-recorder|[GitHub](https://github.com/microsoft/skill-recorder)|微软开源的桌面应用（MIT）：录一遍你在屏幕上的操作（点击、切窗、访问页面、口述），用 Copilot CLI 自动生成可复用的 Agent Skill。|
 
 ### 文章与教程
 

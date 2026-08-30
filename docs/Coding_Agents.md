@@ -33,6 +33,12 @@
 | Deep Code | [GitHub](https://github.com/lessweb/deepcode-cli) ・[官网](https://deepcode.vegamo.cn/) | 专为 DeepSeek-V4 优化的开源终端编码助手，支持深度思考、推理强度控制、Agent Skills 与 MCP，已列入 agentskills.io 采纳名单 |
 | DeepSeek-TUI | [awesome-deepseek-agent](https://github.com/deepseek-ai/awesome-deepseek-agent) | Rust 实现的 DeepSeek 终端编码工具，带沙箱工具与 MCP 支持 |
 | Tura | [GitHub](https://github.com/Tura-AI/tura) ・[官网](https://turaai.net/) ・[基准](https://turaai.net/benchmark) | 本地开源编码 Agent（AGPL-3.0），主打"先理解仓库再动手"与可核验的 token 节省，官方基准称比基线少 77.5% 交互轮次、效果提升 16.7%（数据来自项目自测） |
+| **Grok Build** | [GitHub](https://github.com/xai-org/grok-build) | xAI（SpaceXAI）官方开源的终端编码 Agent（Rust，Apache-2.0，2026-07 发布）：全屏鼠标可交互 TUI，理解代码库、编辑文件、执行 Shell、联网搜索、管理长任务；可无头运行用于脚本 / CI，也可经 ACP 协议嵌入编辑器 |
+| MiMoCode | [GitHub](https://github.com/XiaomiMiMo/MiMo-Code) | 小米 MiMo 团队开源的终端编码助手（MIT）：读写代码、执行命令、管理 Git，带持久记忆系统跨会话理解项目，可接任意主流模型 API |
+| Whale | [GitHub](https://github.com/usewhale/Whale) | 面向 DeepSeek 的终端优先编码 Agent（MIT）：约 98% 提示缓存命中率、1M 上下文、可编程工作流，从终端起步可扩展到桌面 |
+| Dao Code（道） | [GitHub](https://github.com/tigicion/dao-code) | 围绕 DeepSeek-V4 性价比构建的开源 TypeScript 终端编码 Agent（MIT），强调成本、体验与可用性，中英双语文档 |
+| Codex Security | [GitHub](https://github.com/openai/codex-security) | OpenAI 官方 `@openai/codex-security` CLI 与 TypeScript SDK（Apache-2.0，2026-07）：发现、验证并修复代码安全漏洞，可接入 CI |
+| opencodex | [GitHub](https://github.com/lidge-jun/opencodex) | Codex / Claude Code 的通用模型代理（MIT）：两条命令即可让这两个官方 Agent 跑任意 LLM（Claude、Gemini、Grok、DeepSeek、Ollama 本地模型等） |
 
 ## IDE / 编辑器编码 Agent
 
@@ -59,6 +65,11 @@
 |------|------|------|
 | OpenClaw | [GitHub](https://github.com/openclaw/openclaw) ・[官网](https://openclaw.ai/) | 开源自托管的个人 AI 助理，通过 WhatsApp/Telegram/Discord/Slack 等聊天软件交互，能真正动手执行任务（操作设备、文件、邮件、浏览网页）。模型无关，吉祥物是只龙虾🦞，**中文社区俗称"龙虾"**；由 Peter Steinberger 等发起 |
 | Hermes Agent | [GitHub](https://github.com/NousResearch/hermes-agent) ・[官网](https://hermes-agent.nousresearch.com/) | Nous Research 出品的**自我进化型**自主 Agent：内置学习循环，能从经验生成技能、持续改进、检索历史对话并建立长期记忆，可多平台触达、委派编程 agent |
+| OpenWorker | [GitHub](https://github.com/andrewyng/openworker) | 吴恩达开源的桌面 AI「同事」（MIT，公测中）：强调交付**成品**而非聊天——审代码漏洞、写文档、跑日常任务；本机运行、模型无关（OpenAI / Anthropic / Google / Ollama 全本地） |
+| OpenBot | [GitHub](https://github.com/CopilotKit/OpenBot) | CopilotKit 开源的「AI 同事」：每个 Agent 拥有自己的电脑——独立浏览器与登录态、独立文件、按需授权的工具，可自带 Agent（BYO agent） |
+| Kiro Crew | [GitHub](https://github.com/kirodotdev/KiroCrew) | AWS Kiro 团队开源的持久化开发工作区（Apache-2.0）：自学习、自进化、跨会话延续，桌面 / Web / CLI 三端，可通过 Slack、Discord 继续同一份工作 |
+| Kun（鲲） | [GitHub](https://github.com/KunAgent/Kun) | 本地优先的 AI 工作台：桌面 GUI 与终端 TUI 共用一个本地运行时，Code 模式（含 Design 画布）与 Work 模式（写作 / 资料 / 自动化），任务、审批、计划与证据始终连续 |
+| OpenScience | [GitHub](https://github.com/synthetic-sciences/openscience) | 开源 AI 科研工作台（Apache-2.0）：给定目标后自行读文献、写代码跑实验、整理结果并撰写报告 |
 
 ## 自主软件工程 Agent（开源 / 产品）
 

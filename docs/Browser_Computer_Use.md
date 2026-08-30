@@ -96,6 +96,8 @@
 | open-computer-use | [GitHub](https://github.com/e2b-dev/open-computer-use) | E2B 出品，基于开源 LLM + E2B 桌面沙箱的 computer use |
 | Computer Use OOTB | [GitHub](https://github.com/showlab/computer_use_ootb) | Show Lab(NUS) 出品，开箱即用的 Windows/macOS GUI Agent，无需 Docker |
 | OpenAdapt | [GitHub](https://github.com/OpenAdaptAI/OpenAdapt) | 生成式流程自动化（Generative RPA），录制-回放式桌面自动化 |
+| OpenBot | [GitHub](https://github.com/CopilotKit/OpenBot) | CopilotKit 开源「AI 同事」：每个 Agent 拥有独立的浏览器（自己的登录态）、文件与按需授权的工具，可自带 Agent |
+| Skill Recorder | [GitHub](https://github.com/microsoft/skill-recorder) | 微软开源：录制一次屏幕操作（点击、切窗、网页、口述），自动生成 Agent 可重复执行的 Skill，是「示教式」Computer Use |
 
 ## 移动端 GUI Agent（Android / iOS）
 

@@ -54,6 +54,8 @@
 - [通义灵码](https://lingma.aliyun.com) — 阿里云基于通义大模型的智能编码助手。
 - [v0](https://v0.dev) — Vercel 出品，通过对话生成 React/Next.js 前端 UI 组件。
 - [bolt.new](https://bolt.new) — StackBlitz 出品的全栈 AI 开发平台，从提示到可运行 Demo 极快。
+- [Grok Build](https://github.com/xai-org/grok-build) — xAI 开源的终端编码 Agent，全屏 TUI，Apache-2.0。
+- [OpenWorker](https://github.com/andrewyng/openworker) — 吴恩达开源的桌面 AI 同事，交付成品而非聊天，模型无关、本机运行。
 
 ### AI 写作
 
@@ -70,6 +72,8 @@
 - [美图设计室](https://www.designkit.cn) — 美图出品的国产 AI 设计平台，主打商品图、抠图与海报。
 - [Canva AI](https://www.canva.com) — Canva 的 Magic 系列 AI，把生成式设计带入海量模板。
 - [稿定 AI](https://www.gaoding.art) — 国产一站式 AI 设计平台，覆盖文生图、文案与商品图。
+- [GenOffice](https://github.com/genspark-ai/genoffice) — Genspark 开源的全功能 AI Office 套件（Word / Excel / PPT，macOS / Windows / Linux，Apache-2.0）。
+- [OpenKnowledge](https://github.com/inkeep/open-knowledge) — Inkeep 开源的 AI 原生 Markdown IDE / LLM wiki：所见即所得编辑、图谱、与 Claude / Codex / OpenCode 并排协作，自带 MCP 与 Skills。
 
 ### AI 语音/音乐/数字人
 

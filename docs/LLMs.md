@@ -10,12 +10,15 @@
 
 | 模型 | 开发方 | 链接 | 中文简介（关键能力与发布时间） |
 |------|--------|------|--------------------------------|
+| GPT-5.6（Luna / Terra / Sol） | OpenAI | [openai.com](https://openai.com/index/gpt-5-6/) | 2026 年 7 月 9 日发布的三档模型家族（由弱到强 Luna / Terra / Sol），面向企业工作、编码、科研与网络安全；Sol 为最强档，8 月 21 日起 API 降价 20%+。 |
 | GPT-5 | OpenAI | [openai.com](https://openai.com/index/introducing-gpt-5/) | 2025 年 8 月发布，OpenAI 新一代旗舰，统一推理与对话（自动调度"思考"模式），取代 GPT-4o/o3 成为 ChatGPT 默认模型。 |
 | o3 / o4-mini | OpenAI | [openai.com](https://openai.com/index/introducing-o3-and-o4-mini/) | 2025 年 4 月发布的 o 系列推理模型，"先思考后回答"，o4-mini 主打高性价比快速推理。 |
 | GPT-4.1 | OpenAI | [openai.com](https://openai.com/index/gpt-4-1/) | 2025 年 4 月发布，专精编码，100 万 token 长上下文，指令遵循强。 |
+| **Claude 5 家族（Fable 5 / Opus 5 / Sonnet 5）** | Anthropic | [platform.claude.com](https://platform.claude.com/docs/en/about-claude/models/overview) | 2026 年 6–7 月发布的第 5 代：Fable 5（6 月 9 日，Mythos 级旗舰，$10/$50 每百万 token）、Sonnet 5（6 月 30 日，$2/$10）、Opus 5（7 月 24 日，$5/$25，接近 Fable 5 智能但价格减半）；三者均 1M 上下文、128K 输出、自适应思考。 |
 | Claude Opus 4.5 | Anthropic | [anthropic.com](https://www.anthropic.com/news/claude-opus-4-5) | 2025 年 11 月发布，Anthropic 最强模型，编码与智能体能力顶尖。 |
 | Claude Sonnet 4.5 | Anthropic | [anthropic.com](https://www.anthropic.com/news/claude-sonnet-4-5) | 2025 年 9 月发布，平衡性能与成本，长程智能体任务表现优异。 |
 | Claude 4（Opus 4 / Sonnet 4） | Anthropic | [anthropic.com](https://www.anthropic.com/news/claude-4) | 2025 年 5 月发布的第 4 代，Opus 4 号称"世界最佳编码模型"。 |
+| Gemini 3.x（3.7 Flash / 3.5 Flash / 3.1 Pro） | Google DeepMind | [changelog](https://ai.google.dev/gemini-api/docs/changelog) | 2026 年迭代：3.5 Flash（5 月 GA）、3.6 Flash（7 月）、3.7 Flash（8 月 13 日 GA，「最智能的编码 / Agent 主力模型」）；3.1 Pro 仍为预览。另有 Gemini Omni 1.1 Flash 视频生成模型（8 月 GA）。 |
 | Gemini 3 Pro | Google DeepMind | [blog.google](https://blog.google/products/gemini/gemini-3/) | 2025 年 11 月发布，Google 最强多模态旗舰，"推理优先"，含 Deep Think 模式。 |
 | Gemini 2.5 Pro / Flash | Google DeepMind | [developers.googleblog.com](https://developers.googleblog.com/en/gemini-2-5-thinking-model-updates/) | "思考型"系列，Pro 主打高智能、Flash 主打低延迟低成本。 |
 | Grok 4 | xAI | [x.ai](https://x.ai/news) | 2025 年 7 月发布，256K 上下文，原生工具调用（代码、联网与 X 搜索）。 |
@@ -41,6 +44,7 @@
 | DeepSeekMath-V2 / OCR-2 | 深度求索 | [Math-V2](https://github.com/deepseek-ai/DeepSeek-Math-V2) ・[OCR-2](https://github.com/deepseek-ai/DeepSeek-OCR-2) | 专项模型：Math-V2（2025-11）自我可验证数学推理达 IMO 金牌；OCR-2（2026-01）Visual Causal Flow 文档理解。 |
 | Qwen3（通义千问 3） | 阿里巴巴 | [GitHub](https://github.com/QwenLM/Qwen3) | 2025 年 4 月发布，Apache 2.0 开源，0.6B–235B 多规格，首推混合推理，支持 119 种语言与 MCP。 |
 | GLM-4.6 / GLM-4.5 | 智谱 AI | [HuggingFace](https://huggingface.co/zai-org/GLM-4.5) | GLM-4.5（2025 年 7 月）355B/32B MoE，MIT 协议开源，面向智能体；GLM-4.6 进一步升级。 |
+| **Kimi K3** | 月之暗面 | [GitHub](https://github.com/MoonshotAI/Kimi-K3) ・[HuggingFace](https://huggingface.co/moonshotai/Kimi-K3) | 2026 年 7 月开放权重（Kimi K3 License）：2.8T 参数原生多模态 Agent 模型，KDA + AttnRes 新架构，896 专家激活 16 个，1M 上下文，主打长程编码与端到端知识工作；配套开源 RL 环境平台 [AgentENV](https://github.com/kvcache-ai/AgentENV)。 |
 | Kimi K2 / K2 Thinking | 月之暗面 | [GitHub](https://github.com/moonshotai/Kimi-K2) | K2（2025 年 7 月）1T/32B MoE 开源；K2 Thinking（11 月）多项基准超 GPT-5、Sonnet 4.5。 |
 | MiniMax M2 | MiniMax | [GitHub](https://github.com/MiniMax-AI) | 2025 年 10 月发布的开源大模型，主打高效推理与智能体能力。 |
 | ERNIE 4.5 / 文心一言 | 百度 | [yiyan.baidu.com](https://yiyan.baidu.com/) | 2025 年 3 月发布，MoE 架构最高 424B/47B；配套 ERNIE X1 深度推理模型。 |

@@ -53,3 +53,9 @@
 | Steel.dev | [GitHub](https://github.com/steel-dev) | 专为 AI agent 打造的开源无头浏览器 API |
 | Casdoor | [GitHub](https://github.com/casdoor/casdoor) | 开源的 Agent-First 身份与访问管理（IAM）/ 认证服务器与 MCP、agent 网关，带 Web UI，支持 MCP、OAuth、OIDC、SAML、LDAP、SCIM、WebAuthn、MFA 等 |
 | monlite | [GitHub](https://github.com/qataruts/monlite) | 面向 AI agent 的「本地后端」（TypeScript，MIT）：把文档、向量、缓存、队列与 cron 定时任务全部集成进单个 SQLite 文件，零外部依赖即可为 agent 提供持久化、检索与任务调度能力 |
+| eve | [GitHub](https://github.com/vercel/eve) | Vercel 开源的「文件系统优先」持久 Agent 框架（Apache-2.0）：`instructions.md`、`agent.ts` 等约定位置即编程接口，项目易于检视、扩展与运维 |
+| TrueForge | [GitHub](https://github.com/truefoundry/trueforge) | TrueFoundry 开源的 Agent harness / 运行时（MIT）：替你跑 Agent 执行循环——模型调用、MCP 工具、Skills、沙箱、审批、上下文与会话状态，暴露为聊天 UI、HTTP API / TS SDK |
+| Cloudflare Computer | [GitHub](https://github.com/cloudflare/computer) | Cloudflare 官方「给 Agent 一台电脑」：Durable Object 内的虚拟文件系统（SQLite 权威状态）+ 可插拔执行面 |
+| OpenConnector | [GitHub](https://github.com/oomol-lab/open-connector) | 开源 Agent 连接器网关（Apache-2.0，Pipedream / Composio 替代）：用户授权一次，向 Agent 暴露 1000+ 服务商、10000+ 预置 Action，SDK / CLI / MCP / HTTP 多接口 |
+| Butterbase | [GitHub](https://github.com/butterbase-ai/butterbase) | 面向 AI 应用的开源 BaaS（Apache-2.0）：Postgres + RLS、Serverless 函数、LLM 网关、实时订阅、KV、文件存储与 MCP |
+| AgentENV | [GitHub](https://github.com/kvcache-ai/AgentENV) | 清华 KVCache.AI 开源的大规模 Agent 环境平台（MIT）：Firecracker 微虚机 <50ms 启动 / 恢复、增量快照与 fork，为 Kimi K3 的 Agentic RL 训练提供环境 |
